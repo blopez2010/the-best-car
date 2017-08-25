@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Car from './Car';
 
-const CarListItem = ({ car, isDisabled = false, onToggleSelect, onItemClick }) => (
-  <Car car={car} isDetail={false} isDisabled={isDisabled} onToggleSelect={onToggleSelect} onItemClick={onItemClick} />
+const CarListItem = ({ car, isDisabled = false, onToggleSelect }) => (
+  <Car car={car} isDetail={false} isDisabled={isDisabled} onToggleSelect={onToggleSelect} />
 )
 
 CarListItem.propTypes = {
@@ -16,8 +16,7 @@ CarListItem.propTypes = {
     price: PropTypes.number.isRequired
   }).isRequired,
   isDisable: PropTypes.bool,
-  onToggleSelect: PropTypes.func.isRequired,
-  onItemClick: PropTypes.func.isRequired
+  onToggleSelect: PropTypes.func.isRequired
 }
 
 export default CarListItem;

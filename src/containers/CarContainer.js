@@ -19,7 +19,6 @@ const CarContainer = ({ cars, selectedCount, toggleSelect }) => (
           car={car}
           isDisabled={selectedCount === 3}
           onToggleSelect={() => toggleSelect(car.id)}
-          onItemClick={() => alert('Test')}
         />)}
     </CarList>
   </div>

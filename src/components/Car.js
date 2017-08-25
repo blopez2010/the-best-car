@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import NumberFormat from 'react-number-format';
-import { Checkbox, Image, Button } from 'react-bootstrap';
+import { Checkbox, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Car = ({ car, isDetail = false, isDisabled = false, onToggleSelect, onItemClick }) => (
+const Car = ({ car, isDetail = false, isDisabled = false, onToggleSelect }) => (
   <tr key={car.id}>
-    {!isDetail ? <td width={"10%"}><Button bsStyle="info" onClick={onItemClick}>View Details</Button></td> : null}
-    {!isDetail ? <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} onChange={onToggleSelect}/></td> : null}
+    {!isDetail ? <td width={"10%"}><Link className="btn btn-info" role="button" to={`/details/${car.id}`}>View Details</Link></td> : null}
+    {!isDetail ? <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} onChange={onToggleSelect} /></td> : null}
     {!isDetail ? <td width={"20%"}><Image src={car.img} thumbnail /></td> : null}
     <td>{car.model}</td>
     <td>{car.year}</td>
@@ -26,8 +27,7 @@ Car.propTypes = {
     price: PropTypes.number.isRequired
   }).isRequired,
   isDetail: PropTypes.bool,
-  onToggleSelect: PropTypes.func.isRequired,
-  onItemClick: PropTypes.func.isRequired
+  onToggleSelect: PropTypes.func.isRequired
 }
 
 export default Car;
