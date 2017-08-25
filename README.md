@@ -1,6 +1,8 @@
 # The Best Car
 
-*Running the application*
+*To run the application use `yarn start` in the terminal*
+
+### Other commands
 
 | Command | Description |
 |--------|---|

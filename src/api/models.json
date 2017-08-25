@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "brandId": 1,
+    "description": "Santa Fe Sport"
+  },
+  {
+    "id": 2,
+    "brandId": 2,
+    "description": "Audi TT"
+  },
+  {
+    "id": 3,
+    "brandId": 3,
+    "description": "BMW M6"
+  },
+  {
+    "id": 4,
+    "brandId": 3,
+    "description": "BMW X5"
+  },
+  {
+    "id": 5,
+    "brandId": 4,
+    "description": "Rav4"
+  }
+]

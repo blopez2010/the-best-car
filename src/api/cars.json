@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "modelId": 1,
+    "bandId": 1,
+    "img": "/images/hyundai.jpeg",
+    "year": 2017,
+    "Price": 24950,
+    "Type": "Inline 4-cylinder",
+    "Displacement": "2.4",
+    "Horsepower": "185 @ 6,000",
+    "Torque": "178 @ 4,000",
+    "Transmission": "Standard"
+  },
+  {
+    "id": 2,
+    "modelId": 2,
+    "bandId": 2,
+    "img": "/images/audi.jpeg",
+    "year": 2017,
+    "Price": 53925,
+    "Type": "turbocharged 4-cylinder engine",
+    "Displacement": "2.0",
+    "Horsepower": "220 @ 4500",
+    "Torque": "258 @ 1600",
+    "Transmission": "w/Driver Selectable Mode"
+  },
+  {
+    "id": 3,
+    "modelId": 3,
+    "bandId": 3,
+    "img": "/images/bmw.jpeg",
+    "year": 2017,
+    "Price": 114695,
+    "Type": "8-cylinder engine",
+    "Displacement": "4.4",
+    "Horsepower": "560 @ 6000",
+    "Torque": "500 @ 1500",
+    "Transmission": "7-Speed M Double-Clutch w/Drivelogic"
+  },
+  {
+    "id": 4,
+    "modelId": 4,
+    "bandId": 3,
+    "img": "/images/bmwx5.jpeg",
+    "year": 2017,
+    "Price": 53925,
+    "Type": "turbocharged inline-6 engine",
+    "Displacement": "3.0",
+    "Horsepower": "300 @ 5800",
+    "Torque": "300 @ 1300",
+    "Transmission": "8-Speed Automatic w/STEPTRONIC"
+  },
+  {
+    "id": 5,
+    "modelId": 5,
+    "bandId": 4,
+    "img": "/images/bmwx5.jpeg",
+    "year": 2017,
+    "Price": 33300,
+    "Type": "4-cylinder engine",
+    "Displacement": "2.5",
+    "Horsepower": "176 @ 6000",
+    "Torque": "172 @ 4100",
+    "Transmission": "6-Speed Automatic"
+  }
+]
