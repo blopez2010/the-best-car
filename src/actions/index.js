@@ -23,3 +23,8 @@ export const loadAllData = () => dispatch => {
     dispatch(receiveCars(result.cars));
   });
 }
+
+export const toggleSelect = (id) => ({
+  type: types.TOGGLE_SELECT_CAR,
+  id
+})

@@ -14,7 +14,6 @@ export const getModelById = (state, id) => fromModels.getModel(state.models, id)
 // export const getCar = (id) => carById[id];
 
 const buildCarInfo = (state, car) => {
-  const test = getBrandById(state, car.brandId);
   return {
     ...car,
     model: getModelById(state, car.modelId).description || '',
@@ -33,3 +32,6 @@ export const getAllCars = state =>
   sortByBrand(state.cars.map(car => {
     return buildCarInfo(state, car)
   }))
+
+  export const getSelectCount = state =>
+  state.cars.filter((car) => car.selected).length;
