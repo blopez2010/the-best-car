@@ -24,7 +24,7 @@ const App = () => (
     <Layout>
       <Route exact path='/' component={CarContainer} />
       <Route path='/details/:id' component={CarDetailsContainer} />
-      <Route path='/compare/' component={CarCompareContainer}/>
+      <Route path='/compare' component={CarCompareContainer}/>
     </Layout>
   </Router>
 

@@ -11,7 +11,6 @@ export default combineReducers({
 
 export const getBrandById = (state, id) => fromBrands.getBrand(state.brands, id);
 export const getModelById = (state, id) => fromModels.getModel(state.models, id);
-// export const getCar = (id) => carById[id];
 
 export const buildCarInfo = (state, car) => {
   return {
@@ -35,6 +34,3 @@ export const getAllCars = state =>
 
 export const getSelectCount = state =>
   state.cars.filter((car) => car.selected).length;
-
-export const getSelectedCars = (state, id) =>
-  state.cars.filter(car => car.selected);

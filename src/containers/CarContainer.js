@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllCars, getSelectCount } from '../reducers';
 import { toggleSelect } from '../actions';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import CarList from '../components/CarsList';
 import CarListItem from '../components/CarListItem';
 
 const CarContainer = ({ cars, selectedCount, toggleSelect }) => (
   <div>
-    <Button bsStyle="primary" disabled={selectedCount <= 1}>Compare</Button>
+    <Link className="btn btn-primary" role="button" disabled={selectedCount <= 1} to="/compare">Compare</Link>
     <CarList>
       {cars.map(car =>
         <CarListItem

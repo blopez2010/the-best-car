@@ -31,9 +31,3 @@ Car.propTypes = {
 }
 
 export default Car;
-// ,
-// type: PropTypes.string,
-// displacement: PropTypes.string,
-// horsepower: PropTypes.string,
-// torque: PropTypes.string,
-// transmission: PropTypes.string

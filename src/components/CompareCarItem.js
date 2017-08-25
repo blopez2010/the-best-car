@@ -1,29 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import { Image, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Image, Row, Col, Table } from 'react-bootstrap';
 
 import CarDetailsItem from './CarDetailsItem';
 
-const CarDetails = ({ car }) => (
+const CompareCarItem = ({ car }) => (
   <div>
     <Row>
-      <Col xs={3}>
-        <Image src={car.img} thumbnail height={200} />
+      <Col colSpan="2">
+        <Image src={car.img} thumbnail width="50%" heigh="50%" />
       </Col>
-      <Col xs={9}>
-        <CarDetailsItem car={car} />
-      </Col>
-    </Row>
-    <Row>
-      <br/>
-      <Link className="btn btn-info" role="button" to="/">Go Back</Link>
+      <CarDetailsItem car={car} />
     </Row>
   </div>
 )
 
-CarDetails.propTypes = {
+CompareCarItem.propTypes = {
   car: PropTypes.shape({
     id: PropTypes.number.isRequired,
     img: PropTypes.string.isRequired,
@@ -34,4 +27,4 @@ CarDetails.propTypes = {
   }).isRequired
 }
 
-export default CarDetails;
+export default CompareCarItem;
