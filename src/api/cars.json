@@ -2,7 +2,7 @@
   {
     "id": 1,
     "modelId": 1,
-    "bandId": 1,
+    "brandId": 1,
     "img": "/images/hyundai.jpeg",
     "year": 2017,
     "Price": 24950,
@@ -15,7 +15,7 @@
   {
     "id": 2,
     "modelId": 2,
-    "bandId": 2,
+    "brandId": 2,
     "img": "/images/audi.jpeg",
     "year": 2017,
     "Price": 53925,
@@ -28,7 +28,7 @@
   {
     "id": 3,
     "modelId": 3,
-    "bandId": 3,
+    "brandId": 3,
     "img": "/images/bmw.jpeg",
     "year": 2017,
     "Price": 114695,
@@ -41,7 +41,7 @@
   {
     "id": 4,
     "modelId": 4,
-    "bandId": 3,
+    "brandId": 3,
     "img": "/images/bmwx5.jpeg",
     "year": 2017,
     "Price": 53925,
@@ -54,7 +54,7 @@
   {
     "id": 5,
     "modelId": 5,
-    "bandId": 4,
+    "brandId": 4,
     "img": "/images/bmwx5.jpeg",
     "year": 2017,
     "Price": 33300,

@@ -17,15 +17,9 @@ const receiveCars = cars => ({
 });
 
 export const loadAllData = () => dispatch => {
-  cars.getCars(cars => {
-    dispatch(receiveCars(cars));
-  });
-
-  cars.getBrands(brands => {
-    dispatch(receiveBrands(brands));
-  });
-
-  cars.getModels(models => {
-    dispatch(receiveModels(models));
+  cars.getData(result => {
+    dispatch(receiveModels(result.models));
+    dispatch(receiveBrands(result.brands));
+    dispatch(receiveCars(result.cars));
   });
 }

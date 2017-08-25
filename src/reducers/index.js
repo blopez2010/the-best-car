@@ -1,23 +1,24 @@
 import { combineReducers } from 'redux';
-import * as carById from './cars';
-import * as brandById from './brands';
-import { byId as modelById, getModel } from './models';
+import cars from './cars';
+import brands, * as fromBrands from './brands';
+import models, * as fromModels from './models';
 
 export default combineReducers({
-  brands: brandById,
-  cars: carById,
-  models: modelById
+  cars,
+  brands,
+  models
 });
 
-export const getBrand = (id) => brandById[id];
-export const getModelById = (state, id) => getModel(state.models, id);
-export const getCar = (id) => carById[id];
+export const getBrandById = (state, id) => fromBrands.getBrand(state.brands, id);
+export const getModelById = (state, id) => fromModels.getModel(state.models, id);
+// export const getCar = (id) => carById[id];
 
 const buildCarInfo = (state, car) => {
+  const test= getBrandById(state, car.brandId);
   return {
     ...car,
-    model: getModelById(state, car.modelId).description,
-    brand: getBrand(car.brandId).description
+    model: getModelById(state, car.modelId).description || '',
+    brand: getBrandById(state, car.brandId).description || ''
   }
 };
 
@@ -25,4 +26,3 @@ export const getAllCars = state =>
   state.cars.map(car => {
     return buildCarInfo(state, car)
   })
-// export const getCarByModelName = () =>

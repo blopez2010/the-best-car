@@ -1,7 +1,19 @@
 import { combineReducers } from 'redux'
 import { RECEIVE_MODELS } from '../constants/ActionTypes';
 
-export const byId = (state = {}, action) => {
+const models = (state = [], action) => {
+  switch (action.type) {
+    case RECEIVE_MODELS:
+      return [
+        ...state,
+        ...action.models
+      ]
+    default:
+      return state;
+  }
+};
+
+const modelById = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_MODELS:
       return {
@@ -14,9 +26,14 @@ export const byId = (state = {}, action) => {
     default:
       return state;
   }
-};
+}
 
-export const getModel = (state, id) => state.byId[id];
+export default combineReducers({
+  models,
+  modelById
+})
+
+export const getModel = (state, id) => state.modelById[id];
 
 // const modelName = (state = [], action) => {
 //   switch (action.type) {

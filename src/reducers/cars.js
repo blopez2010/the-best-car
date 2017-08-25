@@ -1,6 +1,6 @@
 import { RECEIVE_CARS } from '../constants/ActionTypes';
 
-const byId = (state = [], action) => {
+const cars = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_CARS:
       return [
@@ -12,4 +12,4 @@ const byId = (state = [], action) => {
   }
 }
 
-export default byId;
+export default cars;

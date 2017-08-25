@@ -5,7 +5,7 @@ import { getAllCars } from '../reducers';
 
 const CarContainer = ({cars}) => (
   <div>
-    {cars}
+    {cars.length}
   </div>
 )
 
