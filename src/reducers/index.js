@@ -13,7 +13,7 @@ export const getBrandById = (state, id) => fromBrands.getBrand(state.brands, id)
 export const getModelById = (state, id) => fromModels.getModel(state.models, id);
 // export const getCar = (id) => carById[id];
 
-const buildCarInfo = (state, car) => {
+export const buildCarInfo = (state, car) => {
   return {
     ...car,
     model: getModelById(state, car.modelId).description || '',
@@ -33,5 +33,8 @@ export const getAllCars = state =>
     return buildCarInfo(state, car)
   }))
 
-  export const getSelectCount = state =>
+export const getSelectCount = state =>
   state.cars.filter((car) => car.selected).length;
+
+export const getSelectedCars = (state, id) =>
+  state.cars.filter(car => car.selected);

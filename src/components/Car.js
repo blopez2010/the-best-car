@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Car = ({ car, isDetail = false, isDisabled = false, onToggleSelect }) => (
   <tr key={car.id}>
     {!isDetail ? <td width={"10%"}><Link className="btn btn-info" role="button" to={`/details/${car.id}`}>View Details</Link></td> : null}
-    {!isDetail ? <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} onChange={onToggleSelect} /></td> : null}
+    {!isDetail ? <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} checked={car.selected} onChange={onToggleSelect} /></td> : null}
     {!isDetail ? <td width={"20%"}><Image src={car.img} thumbnail /></td> : null}
     <td>{car.model}</td>
     <td>{car.year}</td>

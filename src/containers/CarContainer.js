@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllCars, getSelectCount } from '../reducers';
 import { toggleSelect } from '../actions';
-import { Row, Button } from 'react-bootstrap';
-
+import { Button } from 'react-bootstrap';
 
 import CarList from '../components/CarsList';
 import CarListItem from '../components/CarListItem';

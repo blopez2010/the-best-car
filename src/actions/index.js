@@ -1,5 +1,6 @@
 import cars from '../api';
 import * as types from '../constants/ActionTypes';
+import { buildCarInfo } from '../reducers';
 
 const receiveModels = models => ({
   type: types.RECEIVE_MODELS,
@@ -28,3 +29,6 @@ export const toggleSelect = (id) => ({
   type: types.TOGGLE_SELECT_CAR,
   id
 })
+
+export const getCarById = id => (dispatch, getState) =>
+  getState().cars.map(car => buildCarInfo(getState(), car)).find(car => car.id == id);
