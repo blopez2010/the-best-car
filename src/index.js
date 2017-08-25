@@ -8,6 +8,9 @@ import reducer from './reducers';
 import { loadAllData } from './actions';
 import App from './containers/App';
 
+import './index.css';
+import './App.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const middleware = [ thunk ];

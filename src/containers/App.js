@@ -3,8 +3,12 @@ import CarContainer from './CarContainer';
 
 const App = () => (
   <div>
-    <h2>Cars list</h2>
-    <CarContainer></CarContainer>
+    <div className="App-header">
+      <h2>The Best Bet</h2>
+    </div>
+    <p className="App-intro">
+      <CarContainer></CarContainer>
+    </p>
   </div>
 )
 
