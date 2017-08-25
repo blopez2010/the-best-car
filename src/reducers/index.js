@@ -14,7 +14,7 @@ export const getModelById = (state, id) => fromModels.getModel(state.models, id)
 // export const getCar = (id) => carById[id];
 
 const buildCarInfo = (state, car) => {
-  const test= getBrandById(state, car.brandId);
+  const test = getBrandById(state, car.brandId);
   return {
     ...car,
     model: getModelById(state, car.modelId).description || '',
@@ -22,7 +22,14 @@ const buildCarInfo = (state, car) => {
   }
 };
 
+const sortByBrand = (state) =>
+  state.sort((a, b) => {
+    if (a.brand < b.brand) return -1;
+    if (a.brand > b.brand) return 1;
+    return 0;
+  });
+
 export const getAllCars = state =>
-  state.cars.map(car => {
+  sortByBrand(state.cars.map(car => {
     return buildCarInfo(state, car)
-  })
+  }))

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Table, Image } from 'react-bootstrap';
+import NumberFormat from 'react-number-format';
 
 const CarsList = ({ cars }) => (<Table striped bordered condensed hover responsive>
   <thead>
@@ -20,7 +21,7 @@ const CarsList = ({ cars }) => (<Table striped bordered condensed hover responsi
         <td>{car.model}</td>
         <td>{car.year}</td>
         <td>{car.brand}</td>
-        <td>{car.price}</td>
+        <td><NumberFormat value={car.price} displayType={'text'} thousandSeparator={true} prefix={'$'}/></td>
       </tr>
     )}
   </tbody>
