@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import { Image, Row, Col, Table } from 'react-bootstrap';
+import { Image, Row, Col } from 'react-bootstrap';
 
 import CarDetailsItem from './CarDetailsItem';
 

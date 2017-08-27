@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Car from './Car';
 
-const CarListItem = ({ car, isDisabled = false, isDetail = false, onToggleSelect }) => (
-  <Car car={car} isDetail={isDetail} isDisabled={isDisabled} onToggleSelect={onToggleSelect} />
+const CarListItem = ({ car, isDisabled = false, onToggleSelect }) => (
+  <Car car={car} isDisabled={isDisabled} onToggleSelect={onToggleSelect} />
 )
 
 CarListItem.propTypes = {

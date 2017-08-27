@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
-import { Image, Row, Col, Table } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { getAllCars, getSelectCount } from '../reducers';
 
 import CompareCarItem from '../components/CompareCarItem';
@@ -30,6 +30,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,
-  {}
+  mapStateToProps
 )(CarCompareContainer);

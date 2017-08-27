@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import NumberFormat from 'react-number-format';
-import { Image, Row, Col, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 const CarDetailsItem = ({ car }) => (
   <div>

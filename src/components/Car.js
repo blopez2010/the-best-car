@@ -5,11 +5,11 @@ import NumberFormat from 'react-number-format';
 import { Checkbox, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Car = ({ car, isDetail = false, isDisabled = false, onToggleSelect }) => (
+const Car = ({ car, isDisabled = false, onToggleSelect }) => (
   <tr key={car.id}>
-    {!isDetail ? <td width={"10%"}><Link className="btn btn-info" role="button" to={`/details/${car.id}`}>View Details</Link></td> : null}
-    {!isDetail ? <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} checked={car.selected} onChange={onToggleSelect} /></td> : null}
-    {!isDetail ? <td width={"20%"}><Image src={car.img} thumbnail /></td> : null}
+    <td width={"10%"}><Link className="btn btn-info" role="button" to={`/details/${car.id}`}>View Details</Link></td>
+    <td width={"10%"}><Checkbox disabled={isDisabled && !car.selected} checked={car.selected} onChange={onToggleSelect} /></td>
+    <td width={"20%"}><Image src={car.img} thumbnail /></td>
     <td>{car.model}</td>
     <td>{car.year}</td>
     <td>{car.brand}</td>
