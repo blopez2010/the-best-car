@@ -2,15 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllCars, getSelectCount } from '../reducers';
-import { toggleSelect } from '../actions';
+import { toggleSelect, setBrandFilter } from '../actions';
 import { Link } from 'react-router-dom';
 
 import CarList from '../components/CarsList';
 import CarListItem from '../components/CarListItem';
+import FilterCar from '../components/FilterCar';
 
-const CarContainer = ({ cars, selectedCount, toggleSelect }) => (
+import { BRAND_FILTER_LABEL } from '../constants/ActionTypes';
+
+import { Row } from 'react-bootstrap';
+
+const CarContainer = ({ cars, selectedCount, filter, toggleSelect, setBrandFilter }) => (
   <div>
-    <Link className="btn btn-primary" role="button" disabled={selectedCount <= 1} to="/compare">Compare</Link>
+    <Row>
+      <FilterCar
+        filter={filter}
+        selectedCount={selectedCount}
+        onFilter={(obj) => setBrandFilter(obj.target.value)} />
+    </Row>
     <CarList>
       {cars.map(car =>
         <CarListItem
@@ -38,10 +48,11 @@ CarListItem.propTypes = {
 
 const mapStateToProps = state => ({
   cars: getAllCars(state),
-  selectedCount: getSelectCount(state)
+  selectedCount: getSelectCount(state),
+  filter: state.carsReducer.carFilter === BRAND_FILTER_LABEL ? '' : state.carsReducer.carFilter
 });
 
 export default connect(
   mapStateToProps,
-  { toggleSelect }
+  { toggleSelect, setBrandFilter }
 )(CarContainer);

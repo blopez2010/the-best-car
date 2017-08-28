@@ -1,4 +1,5 @@
-import { RECEIVE_CARS, TOGGLE_SELECT_CAR } from '../constants/ActionTypes';
+import { combineReducers } from 'redux';
+import { RECEIVE_CARS, TOGGLE_SELECT_CAR, SET_BRAND_FILTER, BRAND_FILTER_LABEL } from '../constants/ActionTypes';
 
 const car = (state, action) => {
   switch (action.type) {
@@ -30,4 +31,19 @@ const cars = (state = [], action) => {
   }
 }
 
-export default cars;
+const carFilter = (
+  state = BRAND_FILTER_LABEL,
+  action
+) => {
+  switch (action.type) {
+    case SET_BRAND_FILTER:
+      return action.filter;
+    default:
+      return state;
+  }
+}
+
+export default combineReducers({
+  cars,
+  carFilter
+});

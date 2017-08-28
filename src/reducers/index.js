@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import cars from './cars';
+import carsReducer from './cars';
 import brands, * as fromBrands from './brands';
 import models, * as fromModels from './models';
+import { BRAND_FILTER_LABEL } from '../constants/ActionTypes';
 
 export default combineReducers({
-  cars,
+  carsReducer,
   brands,
   models
 });
@@ -27,10 +28,13 @@ const sortByBrand = (state) =>
     return 0;
   });
 
-export const getAllCars = state =>
-  sortByBrand(state.cars.map(car => {
+export const getAllCars = (state) =>
+  sortByBrand(state.carsReducer.cars.map(car => {
     return buildCarInfo(state, car)
-  }))
+  })).filter(car =>
+    state.carsReducer.carFilter !== BRAND_FILTER_LABEL ?
+      car.brand.toLowerCase().indexOf(state.carsReducer.carFilter.toLowerCase()) !== -1 :
+      true)
 
 export const getSelectCount = state =>
-  state.cars.filter((car) => car.selected).length;
+  state.carsReducer.cars.filter((car) => car.selected).length;

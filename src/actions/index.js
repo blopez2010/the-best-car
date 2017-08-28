@@ -28,7 +28,12 @@ export const loadAllData = () => dispatch => {
 export const toggleSelect = (id) => ({
   type: types.TOGGLE_SELECT_CAR,
   id
+});
+
+export const setBrandFilter = filter => ({
+  type: types.SET_BRAND_FILTER,
+  filter
 })
 
 export const getCarById = id => (dispatch, getState) =>
-  getState().cars.map(car => buildCarInfo(getState(), car)).find(car => car.id == id);
+  getState().carsReducer.cars.map(car => buildCarInfo(getState(), car)).find(car => car.id == id);
