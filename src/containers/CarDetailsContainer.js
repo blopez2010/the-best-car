@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getCarById } from '../actions';
-import { getAllCars } from '../reducers';
+import { getCarById, getAllCars } from '../actions';
 
 import CarDetails from '../components/CarDetails';
 

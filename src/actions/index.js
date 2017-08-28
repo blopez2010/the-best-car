@@ -1,6 +1,22 @@
 import cars from '../api';
 import * as types from '../constants/ActionTypes';
-import { buildCarInfo } from '../reducers';
+import { getModelById, getBrandById } from '../reducers';
+import { BRAND_FILTER_LABEL } from '../constants/ActionTypes';
+
+const buildCarInfo = (state, car) => {
+  return {
+    ...car,
+    model: getModelById(state, car.modelId).description || '',
+    brand: getBrandById(state, car.brandId).description || ''
+  }
+};
+
+const sortByBrand = (state) =>
+  state.sort((a, b) => {
+    if (a.brand < b.brand) return -1;
+    if (a.brand > b.brand) return 1;
+    return 0;
+  });
 
 const receiveModels = models => ({
   type: types.RECEIVE_MODELS,
@@ -35,5 +51,21 @@ export const setBrandFilter = filter => ({
   filter
 })
 
-export const getCarById = id => (dispatch, getState) =>
-  getState().carsReducer.cars.map(car => buildCarInfo(getState(), car)).find(car => car.id == id);
+export const getCarById = id => (dispatch, getState) => {
+  // eslint-disable-next-line
+  return getState().carsReducer.cars.map(car => buildCarInfo(getState(), car)).find(car => car.id == id)
+};
+
+const brandFilter = (state, car) => (
+  state.carsReducer.carFilter !== BRAND_FILTER_LABEL ?
+    car.brand.toLowerCase().indexOf(state.carsReducer.carFilter.toLowerCase()) !== -1 :
+    true
+)
+
+export const getSelectCount = state =>
+  sortByBrand(state.carsReducer.cars.map(car => buildCarInfo(state, car)))
+    .filter((car) => car.selected).length;
+
+export const getAllCars = (state) =>
+  sortByBrand(state.carsReducer.cars.map(car => buildCarInfo(state, car)))
+    .filter(car => brandFilter(state, car))

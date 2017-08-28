@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 import { Row, Col } from 'react-bootstrap';
-import { getAllCars, getSelectCount } from '../reducers';
+import { getSelectCount, getAllCars } from '../actions';
 
 import CompareCarItem from '../components/CompareCarItem';
 
@@ -23,6 +23,18 @@ const CarCompareContainer = ({ cars, selectedCount }) => (
     </Row>
   </div>
 )
+
+CarCompareContainer.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    img: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    brand: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
+  }).isRequired,
+  selectedCount: PropTypes.number.isRequired
+}
 
 const mapStateToProps = state => ({
   cars: getAllCars(state),

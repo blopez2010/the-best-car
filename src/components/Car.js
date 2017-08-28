@@ -26,7 +26,7 @@ Car.propTypes = {
     brand: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
   }).isRequired,
-  isDetail: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   onToggleSelect: PropTypes.func.isRequired
 }
 

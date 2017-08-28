@@ -1,11 +1,20 @@
 import React from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, InputGroup, Button, Glyphicon, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
+import { Form, FormGroup, ControlLabel, FormControl, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const FilterCar = ({ selectedCount, filter, onFilter }) => (
   <Row>
     <Col xs={1}>
-      <Link className="btn btn-primary" role="button" disabled={selectedCount <= 1} to="/compare">Compare</Link>
+      <Link
+        className="btn btn-primary"
+        role="button"
+        disabled={selectedCount <= 1}
+        to="/compare"
+        style={selectedCount <= 1 ? {pointerEvents: "none"} : null}>
+        Compare
+      </Link>
     </Col>
     <Col xs={7}>
       <Form horizontal componentClass="fieldset">
@@ -21,5 +30,11 @@ const FilterCar = ({ selectedCount, filter, onFilter }) => (
     </Col>
   </Row>
 )
+
+FilterCar.propTypes = {
+  selectedCount: PropTypes.number.isRequired,
+  filter: PropTypes.string,
+  onFilter: PropTypes.func.isRequired
+}
 
 export default FilterCar;

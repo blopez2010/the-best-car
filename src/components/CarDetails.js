@@ -10,7 +10,7 @@ const CarDetails = ({ car }) => (
   <div>
     <Row>
       <Col xs={3}>
-        <Image src={car.img} thumbnail height={200} />
+        <Image src={car.img} thumbnail height={170} weight={270} />
       </Col>
       <Col xs={9}>
         <CarDetailsItem car={car} />

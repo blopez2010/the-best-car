@@ -15,7 +15,7 @@ CarListItem.propTypes = {
     brand: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
   }).isRequired,
-  isDisable: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   onToggleSelect: PropTypes.func.isRequired
 }
 
