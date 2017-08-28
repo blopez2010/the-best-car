@@ -34,18 +34,3 @@ export default combineReducers({
 })
 
 export const getModel = (state, id) => state.modelById[id];
-
-// const modelName = (state = [], action) => {
-//   switch (action.type) {
-//     case RECEIVE_MODELS:
-//       return action.models.map(model => model.description);
-//     default:
-//       return state;
-//   }
-// }
-
-// export default byId;
-// export default combineReducers({
-//   byId,
-//   modelName
-// });
